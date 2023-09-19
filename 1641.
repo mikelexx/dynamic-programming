@@ -1,0 +1,16 @@
+class Solution(object):
+    def countVowelStrings(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        def dp(vowelNumber,n):
+            if n==0:
+                return 1
+            total = 0
+            for i in range(vowelNumber,5):
+                total+=dp(i,n-1)
+                
+            return total
+        return dp(0,n)
+/ total is defined inside recursive function to collect and sum only the leaf node values
